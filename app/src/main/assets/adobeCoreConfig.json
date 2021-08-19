@@ -1,0 +1,19 @@
+{
+  "global.privacy": "optedin",
+  "analytics.launchHitDelay": 0,
+  "audience.timeout": 5,
+  "analytics.backdatePreviousSessionInfo": true,
+  "analytics.offlineEnabled": true,
+  "__dev__analytics.rsids": "wbg-banking-dev",
+  "audience.server": "wbg.demdex.net",
+  "build.environment": "prod",
+  "rules.url": "https://assets.adobedtm.com/cf63e89810c4/f7d2022288fa/launch-e8a05ce8e5ee-rules.zip",
+  "experienceCloud.org": "3A4B7BAF56F01DA67F000101@AdobeOrg",
+  "lifecycle.sessionTimeout": 300,
+  "analytics.server": "smetrics.westpac.com.au",
+  "__stage__analytics.rsids": "wbg-banking-dev",
+  "analytics.rsids": "wbg-banking-prd",
+  "analytics.batchLimit": 0,
+  "property.id": "PRd5aff23d85c44d3289cc6ace91d2ee2b",
+  "analytics.aamForwardingEnabled": true
+}
