@@ -11,7 +11,7 @@ class AdobeAnalyticsProvider(context: Context) : AnalyticsProvider {
     data class ACPCoreExtensionEvent(val payload: MutableMap<String, Any>?) : Event
 
     override fun setup() {
-        TODO("Not yet implemented")
+        // registerAdobeAnalytics in MainActivity actually is called here
     }
 
     override fun track(event: String, trackable: Trackable, context: Map<String, String>) {
