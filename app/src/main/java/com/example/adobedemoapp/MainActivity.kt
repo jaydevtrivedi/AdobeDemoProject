@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
+import androidx.lifecycle.OnLifecycleEvent
 import com.adobe.marketing.mobile.*
 import com.example.adobedemoapp.JavaInteractors.AdobeCoreExtensionJava
 import com.example.adobedemoapp.databinding.ActivityMainBinding
@@ -29,6 +30,10 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun registerAdobeAnalytics() {
+        //Lifecycle calls
+
+
+
         MobileCore.setApplication(application)
         MobileCore.setLogLevel(LoggingMode.DEBUG)
 
@@ -67,6 +72,38 @@ class MainActivity : AppCompatActivity() {
             // TODO - Add appropriate exception handling
             Log.e("adobe", exp.toString())
         }
+    }
+
+    fun onCreate(){
+        MobileCore.setApplication(application)
+        try{
+            Lifecycle.registerExtension()
+        } catch (e: Exception){
+            Log.e("DemoApplication", e.toString())
+        }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        resume()
+    }
+
+    override fun onPause() {
+        super.onPause()
+        pause()
+    }
+
+    // lifecycle onResume
+    fun resume() {
+        MobileCore.setApplication(MobileCore.getApplication())
+        MobileCore.lifecycleStart(null)
+        Log.d("OnResume","ON_RESUME")
+    }
+
+    // lifecycle onPause
+    fun pause() {
+        MobileCore.lifecyclePause()
+        Log.d("onPause","ON_PAUSE")
     }
 
 

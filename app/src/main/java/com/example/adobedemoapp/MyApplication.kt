@@ -11,6 +11,7 @@ class MyApplication : Application() {
 
     override fun onCreate() {
         super.onCreate()
+        Log.d("jaydev", "Called onCreate")
 
         MobileCore.setApplication(this)
         try{
@@ -18,7 +19,5 @@ class MyApplication : Application() {
         } catch (e: Exception){
             Log.e("DemoApplication", e.toString())
         }
-
-        ProcessLifecycleOwner.get().lifecycle.addObserver(MyApplicationLifecycleObserver())
     }
 }
